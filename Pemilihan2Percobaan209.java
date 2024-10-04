@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Pemilihan2Percobaan209 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner input09 = new Scanner(System.in);
 
         int pilihanMenu;
         String member;
@@ -15,10 +15,10 @@ public class Pemilihan2Percobaan209 {
         System.out.println("3. Paket Bundling (Ricebowl + Ice Tea)");
         System.out.println("-------------------------");
         System.out.print("Silahkan masukkan angka untuk menu yang dipilih: ");
-        pilihanMenu = sc.nextInt();
-        sc.nextLine();
+        pilihanMenu = input09.nextInt();
+        input09.nextLine();
         System.out.print("Apakah punya member (y/n) ? = ");
-        member = sc.nextLine();
+        member = input09.nextLine();
         System.out.println("-------------------------");
 
         
