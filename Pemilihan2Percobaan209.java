@@ -4,8 +4,8 @@ public class Pemilihan2Percobaan209 {
         Scanner input09 = new Scanner(System.in);
 
         int pilihanMenu;
-        String member;
-        double diskon = 0.0, harga = 0.0, totalBayar;
+        String member,pembayaran;
+        double diskon = 0.0, harga = 0, totalBayar = 0, pakeQris;
 
         System.out.println("-------------------------");
         System.out.println("===== MENU CAFE JTI =====");
@@ -19,9 +19,11 @@ public class Pemilihan2Percobaan209 {
         input09.nextLine();
         System.out.print("Apakah punya member (y/n) ? = ");
         member = input09.nextLine();
+        System.out.println("Pembayaran melalui QRIS / Tunai? ");
+        pembayaran = input09.nextLine();
         System.out.println("-------------------------");
 
-        
+
     if (member.equalsIgnoreCase("y")) { //menggunakan equalsIgnoreCase untuk membandingkan string
         diskon = 0.10;
         System.out.println("Besar diskon = 10%");
@@ -43,9 +45,14 @@ public class Pemilihan2Percobaan209 {
         }
         totalBayar = harga - (harga * diskon);
         System.out.println("Total bayar setelah diskon = " + totalBayar);
+        pakeQris = totalBayar - 1000.0;
+
+        if (pembayaran.equalsIgnoreCase("QRIS")) {
+            System.out.println("Setelah diskon QRIS = " + pakeQris);
+            return;
+        } 
         }    
         
-
 
         else if (member.equalsIgnoreCase("n")) { //menggunakan equalsIgnoreCase untuk membandingkan string
             if (pilihanMenu == 1) {
@@ -64,12 +71,19 @@ public class Pemilihan2Percobaan209 {
                 System.out.println("Masukkan pilihan menu dengan benar");
                 return; // menghentikan eksekusi lebih lanjut jika pilihan salah
             }
+            
             // menghitung total bayar
-            System.out.println("Total Bayar = " + harga);
+            pakeQris = harga -1000;
 
-        } else {
+            if (pembayaran.equalsIgnoreCase("QRIS")) {
+                System.out.println("Total Harga Bayar= " + pakeQris);
+            }
+        }
+        else {
             System.out.println("Member tidak valid");
         }    
+
+        
         System.out.println("--------------------------------");
 
     }
